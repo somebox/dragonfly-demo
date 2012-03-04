@@ -1,0 +1,9 @@
+Results
+%ul
+- @results.listings.each do |listing|
+  %li 
+    =listing.main_entry.name
+    - logo = listing.main_entry.content_ads.logo
+    - if logo
+      - src = logo.image.original.location
+      %img{src: @app.fetch_url(src).process(:thumb, '32x32#').url}
