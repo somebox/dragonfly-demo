@@ -1,9 +1,17 @@
+:css
+  .item{
+    float:left;
+    width: 160px;
+  }
+  
 Results
-%ul
 - @results.listings.each do |listing|
-  %li 
-    =listing.main_entry.name
-    - logo = listing.main_entry.content_ads.logo
+  .item
+    - logo = listing.main_entry.content_ads.try(:logo)
     - if logo
       - src = logo.image.original.location
-      %img{src: @app.fetch_url(src).process(:thumb, '32x32#').url}
+
+      %img{src: @app.fetch_url(src).process(:thumb, '150x150').url}
+      %br
+      %p= listing.main_entry.name
+      
