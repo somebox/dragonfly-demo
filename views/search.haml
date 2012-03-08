@@ -2,6 +2,10 @@
   .item{
     float:left;
     width: 160px;
+    height: 160px;
+  }
+  .tiny{
+    font-size: 8px;
   }
   
 Results
@@ -10,8 +14,10 @@ Results
     - logo = listing.main_entry.content_ads.try(:logo)
     - if logo
       - src = logo.image.original.location
-
-      %img{src: @app.fetch_url(src).process(:thumb, '150x150').url}
+      - src = "http://bin.staticlocal.ch/#{src}" unless src.match(/^http/)
+      %a{href: src}
+        %img{src: @app.fetch_url(src).process(:thumb, '70x70').url}
       %br
       %p= listing.main_entry.name
+      %p.tiny= listing.entity_id
       

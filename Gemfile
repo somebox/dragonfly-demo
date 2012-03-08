@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gem 'localch', :path => "../phonebook-gem"
 #gem 'localch', :git => 'git@github.com:local-ch/phonebook-gem.git', :branch=>'binarypool_cache'
 gem 'haml'
+gem 'thin'
 gem 'rack'
 gem "sinatra"
 gem 'rack-cache', :require => 'rack/cache'
