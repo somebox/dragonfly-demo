@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
-gem 'localch', :path => "../phonebook-gem"
-#gem 'localch', :git => 'git@github.com:local-ch/phonebook-gem.git', :branch=>'binarypool_cache'
+#gem 'localch', :path => "../phonebook-gem", :require => 'localch'
+gem 'localch', :git => 'git@github.com:local-ch/phonebook-gem.git'
 gem 'haml'
 gem 'thin'
 gem 'rack'

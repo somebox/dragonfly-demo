@@ -1,8 +1,7 @@
-require 'localch'
 require 'sinatra/base'
 require 'dragonfly'
 require 'haml'
-
+require 'localch'
 
 class LogoService < Sinatra::Base
   TYPES={
@@ -33,7 +32,7 @@ class LogoService < Sinatra::Base
   
   get '/logo/:id/:kind.jpg' do
     # get the item
-    id = Phonebook::Listing.extract_entity_id(params[:id])
+    id = params[:id]
     kind = params[:kind]
     result = Phonebook::ItemResult.get(guid: id)
     Backend::Fetcher::Hydra.run

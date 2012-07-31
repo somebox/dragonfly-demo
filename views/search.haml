@@ -16,8 +16,7 @@ Results
       - src = logo.image.original.location
       - src = "http://bin.staticlocal.ch/#{src}" unless src.match(/^http/)
       %a{href: src}
-        %img{src: @app.fetch_url(src).process(:thumb, '70x70').url}
+        %img{src: @app.fetch_url(src).process(:thumb, '120x120#').url}
       %br
       %p= listing.main_entry.name
       %p.tiny= listing.entity_id
-      
