@@ -2,6 +2,8 @@
 
 This is a demonstration app using [Sinatra](http://www.sinatrarb.com) and [Dragonfly](https://github.com/markevans/dragonfly/) to serve dynamically-sized images for local.ch phonebook entries.
 
+A demo of this app was deployed to [http://images.dragonfly-demo.play.intra.local.ch/](http://images.dragonfly-demo.play.intra.local.ch/) for testing.
+
 ## What It Does
 
 This service provides a resized version of any Binarypool image using this url scheme:

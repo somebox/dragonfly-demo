@@ -11,7 +11,7 @@ set :scm_verbose, true
 set :bundle_without,  [:development, :test, :deployment, :osx]
 set :rack_env, 'production'
 
-set :deploy_to, "/var/nginx/dashboard"
+set :deploy_to, "/var/nginx/dragonfly-demo"
 set :branch, 'master'
 
 
