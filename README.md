@@ -57,7 +57,7 @@ Then navigate to [http://localhost:9292/](http://localhost:9292/)
 
 Dragonfly needs a place to store metadata about images ("jobs") and the downloaded/uploaded originals. 
 
-By default, this is the system's `/tmp` area (`/var/private/...` on OSX). Clearly for production, a shared folder that can be easily cleaned up (or limited) would make sense. The metadata (jobs) can be persited to Redis, Mogoe ([example](http://markevans.github.com/dragonfly/file.Mongo.html)) or other places instead of the filesystem.
+By default, this is the system's `/tmp` area (`/var/private/...` on OSX). Clearly for production, a shared folder that can be easily cleaned up (or limited) would make sense. The metadata (jobs) can be persited to S3 ([example](http://markevans.github.com/dragonfly/file.DataStorage.html#S3_datastore)), Mongo ([example](http://markevans.github.com/dragonfly/file.Mongo.html)) or [other places](http://markevans.github.com/dragonfly/file.ServingRemotely.html) instead of the filesystem.
 
 See the [Dragonfly Data Storage docs](http://markevans.github.com/dragonfly/file.DataStorage.html) for more info.
 
