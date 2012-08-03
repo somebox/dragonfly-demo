@@ -1,0 +1,20 @@
+
+%h2= "#{@listing.main_entry.name}"
+
+%form{action:"/listing/#{@listing.entity_id}"}
+  = haml :'partials/size_select'
+  %input{value: 'resize', type:'submit'}
+
+%h3 Logo
+.item
+  = haml :'partials/logo', locals:{listing: @listing, size: @size}
+
+- local_info = @listing.main_entry.content_ads.try(:local_info).try(:package)
+- if local_info && local_info.images.present?
+  .clear
+  %h3 Local Info Images
+  - local_info.images.each do |image|
+    - src = image.original.try(:location)
+    - if src.present?
+      .item
+        %image{src: dragonfly_url(src, @size)}

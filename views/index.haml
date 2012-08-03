@@ -1,11 +1,9 @@
-%h2 logo service
-%p 
-  small
-  %img{src: "/logo/#{@id}/logo.jpg"}
-%p 
-  @2x
-  %img{src: "/logo/#{@id}/logo@2x.jpg"}
-%p 
-  square
-  %img{src: "/logo/#{@id}/logo_sq.jpg"}
+%p
+  This is a demonstration application for serving images with 
+  %a{href:'https://github.com/markevans/dragonfly/'} Dragonfly
+  for dynamic resizing and cropping of images.
+
+%h2 Search for entries
+%fieldset
+  = haml :search
 

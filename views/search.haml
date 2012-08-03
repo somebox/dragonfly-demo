@@ -1,22 +1,22 @@
-:css
-  .item{
-    float:left;
-    width: 160px;
-    height: 160px;
-  }
-  .tiny{
-    font-size: 8px;
-  }
-  
-Results
-- @results.listings.each do |listing|
-  .item
-    - logo = listing.main_entry.content_ads.try(:logo)
-    - if logo
-      - src = logo.image.original.location
-      - src = "http://bin.staticlocal.ch/#{src}" unless src.match(/^http/)
-      %a{href: src}
-        %img{src: @app.fetch_url(src).process(:thumb, '120x120#').url}
-      %br
-      %p= listing.main_entry.name
-      %p.tiny= listing.entity_id
+%form{action:'/search'}
+  %label{for: 'what'} What:
+  %input{name: 'what', type: 'text', value:params[:what]}
+  %label{for: 'where'} Where:
+  %input{name: 'where', type: 'text', value:params[:where]}
+  = haml :'partials/size_select'
+  %input{value: 'search', type:'submit'}
+
+#results
+  - if @results
+    %h2 Results (max 20)
+
+    %p Click on any logo/name to view all images for the entry.
+    
+    - @results.listings.each do |listing|
+      - w,h = @size.split('x').map(&:to_i)
+      .item{style:%Q(width:#{w}px;height:#{h+30}px)}
+        = haml :'partials/logo', locals: {listing: listing, size: @size}
+        .caption
+          %h4
+            %a{href:"/listing/#{listing.entity_id}"}= listing.main_entry.name
+            

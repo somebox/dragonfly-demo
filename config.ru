@@ -1,4 +1,4 @@
-require './logo_service'
+require './image_service'
 require 'dragonfly'
 
 Dragonfly[:images].configure_with(:imagemagick) do |c|
@@ -15,4 +15,4 @@ end
 use Dragonfly::Middleware, :images
 
 
-run LogoService
+run ImageService

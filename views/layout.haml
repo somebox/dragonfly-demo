@@ -1,0 +1,67 @@
+%html
+  %head
+    :css
+      body{
+        font-family: "Helvetica";
+        color: #666;
+      }
+      h1,h2,h3,h4{
+        color: #000;
+      }
+      h3{
+        border-bottom: 1px solid #999;
+        color: #999;
+        clear: left;
+      }
+      a{
+        text-decoration: none;
+        color: red;
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+      form, fieldset{
+        display: inline;
+        padding: 1em;
+      }
+      #results{
+        margin-top: 1em;
+        clear: left;
+      }
+      .item{
+        float: left;
+        position: relative;
+        padding: 20px;
+        margin: 5px;
+        border: 5px solid #eee;
+        overflow: hidden;
+      }
+      .caption{
+        padding: 5px 5px 0 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #eee;
+        overflow: hidden;
+        font-size: 12px;
+      }
+      .caption p, .caption h4{
+        margin: 0;        
+      }
+      .caption h4{
+        font-size: 14px;
+        clear: none;
+      }
+      .small{
+        font-size: 12px;
+      }
+      .clear{
+        clear:both;
+      }
+    %script{src:"http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"}
+    %script{src:"http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.0.6/jquery.fancybox.pack.js"} 
+
+  %body 
+    %h1 Dragonfly Demo
+    %a{href:"/"} Home
+    = yield

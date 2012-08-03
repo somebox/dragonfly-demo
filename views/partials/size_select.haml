@@ -1,0 +1,7 @@
+%label{for: 'size'} Size:
+%select{name: 'size'}
+  - SIZES.each do |name, spec|
+    - if spec == @size
+      %option{value:spec,selected:'selected'}= "#{name} (#{spec})"
+    - else
+      %option{value:spec}= "#{name} (#{spec})"

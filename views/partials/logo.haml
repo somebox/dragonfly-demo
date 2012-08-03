@@ -1,0 +1,7 @@
+- if logo = listing.main_entry.content_ads.try(:logo)
+  .logo
+    %a{href: "/listing/#{listing.entity_id}"}
+      %img{src: dragonfly_url(logo.image.original.try(:location), @size)}
+- else
+  .logo.none
+    %p.small (no logo)
