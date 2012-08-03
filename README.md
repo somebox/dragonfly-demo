@@ -33,7 +33,7 @@ The relevant code to do this is:
       @app.fetch_url(url).thumb(size).encode('jpg').to_response(env)
     end
 
-Caching is provided by [Rack::Cache]() which is built in to Dragonfly.
+`@app` is an instance of the [Dragonfly app](http://markevans.github.com/dragonfly/file.GeneralUsage.html) in this context. Caching is provided by [Rack::Cache]() which is built in to Dragonfly.
 
 ## About the Demo
 
