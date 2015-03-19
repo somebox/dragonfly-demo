@@ -1,8 +1,8 @@
+**NOTE: This app was written for local.ch to demonstrate the power of Dragonfly for use as an on-the-fly image resizing/reformatting service. Another production app was made based on this, and has been in service at local.ch for several years now, and is used by all of our web and mobile apps. So I keep it here for history.**
+
 # Dragonfly Image Demo
 
 This is a demonstration app using [Sinatra](http://www.sinatrarb.com) and [Dragonfly](https://github.com/markevans/dragonfly/) to serve dynamically-sized images for local.ch phonebook entries.
-
-A demo of this app was deployed to [http://images.dragonfly-demo.play.intra.local.ch/](http://images.dragonfly-demo.play.intra.local.ch/) for testing.
 
 ## What It Does
 
